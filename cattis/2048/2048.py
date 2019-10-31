@@ -10,5 +10,14 @@ def readdata(input):
     return data
 
 data = readdata(input)
+length = len(data)
 
-print(data)
+
+matrix = []
+
+for i in range(0,length - 1):
+    temp = data[i].split(' ')
+    temp = list(map(int,temp))
+    matrix.append(temp)
+
+print(matrix)

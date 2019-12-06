@@ -5,13 +5,9 @@ def readdata():
         data = f.read().splitlines()
     data = [item.split(')') for item in data]
     return data
-
-
 def count_orbits_inner(data, id, depth):
     sum = 0
-
     count = 0
-
     if id == "YOU" or id == "SAN":
         sum = depth - 1
     else:
@@ -36,24 +32,9 @@ def count_orbits(data):
     fin_sum = count_orbits_inner(data,data[com_index][1], 1)
     return fin_sum
 
-
-
-def test(a):
-    def add(b):
-        nonlocal a
-        a += 1
-        return a + b
-
-    return add
-
-
-
-
 def main():
     data = readdata()
     n = count_orbits(data)
     print(n)
-
-
 
 main()

@@ -42,7 +42,10 @@ def delta(move):
 
 def check_intersection(a_cord, b_cord):
 
-    cable_length = 1000000
+    manh_length = 1000000
+
+    x_final = 0
+    y_final = 0
     for i in range(0,len(a_cord) - 1):
         x_a_min = min(a_cord[i][0], a_cord[i + 1][0])
         x_a_max = max(a_cord[i][0], a_cord[i + 1][0])
@@ -62,6 +65,8 @@ def check_intersection(a_cord, b_cord):
                     manh_temp = abs(x_cross) + abs(y_cross)
                     if manh_temp < manh_length:
                         manh_length = manh_temp
+                        x_final = x_cross
+                        y_final = y_cross
             if y_a_min == y_a_max and x_b_min == x_b_max:
                 if x_a_min < x_b_min and x_a_max > x_b_min and y_b_min < y_a_min and y_b_max > y_a_min:
                     x_cross = x_b_min
@@ -69,6 +74,12 @@ def check_intersection(a_cord, b_cord):
                     manh_temp = abs(x_cross) + abs(y_cross)
                     if manh_temp < manh_length:
                         manh_length = manh_temp
+                        x_final = x_cross
+                        y_final = y_cross
+
+    print("x:" + str(x_final))
+    print("y:" + str(y_final))
+
     return manh_length
 
 def main():

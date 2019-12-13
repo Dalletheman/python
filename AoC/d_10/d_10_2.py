@@ -1,6 +1,6 @@
 import math
 def readdata():
-    with open('input_11_13.txt') as f:
+    with open('final_input.txt') as f:
         data = f.read().splitlines()
     return data
 
@@ -116,7 +116,7 @@ def sort_coordinates(coordinates, index):
             if sort_list_length == 0:
                 sorted_list.append([coordinate_struct])
 
-
+    return sorted_list
 
 
 
@@ -142,6 +142,16 @@ def main():
     best_index = coordinates.index(best_coordinate)
 
     sorted_coordinates = sort_coordinates(coordinates, best_index)
+
+    x = sorted_coordinates[199][0][1][0]
+    y = sorted_coordinates[199][0][1][1]
+    sum = x*100 + y
+
+
+    print(x)
+    print(y)
+    print(sum)
+
 
 
 

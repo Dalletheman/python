@@ -34,7 +34,10 @@ def check(value):
 def main():
     low = 125730
 
+
+
     high = 579381
+
 
     count = 0
 

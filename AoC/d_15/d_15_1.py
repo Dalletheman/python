@@ -320,7 +320,7 @@ def print_matrix(filled_matrix):
     width = len(filled_matrix[0])
     height = len(filled_matrix)
 
-    for i in range(height - 1, -1, -1):
+    for i in range(0,height):
         for j in range(0,width):
             print(filled_matrix[i][j], end='')
         print('')
